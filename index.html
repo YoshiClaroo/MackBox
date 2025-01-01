@@ -3,90 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Diario de Argentina</title>
+    <meta name="monetag" content="856f9e6aacfefe415614b7d4292d8268">
+    <title>Apps para Ganar Dinero</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
+            background-color: #f9f9f9;
         }
         header {
-            background-color: #003366;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
             color: white;
-            padding: 10px 20px;
+            padding: 20px;
             text-align: center;
         }
-        nav {
-            background-color: #00509e;
-            padding: 10px;
-            display: flex;
-            justify-content: space-around;
-            color: white;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
         }
         main {
             padding: 20px;
         }
-        article {
-            background-color: white;
-            margin-bottom: 20px;
-            padding: 15px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        .app-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
         }
-        article h2 {
-            color: #003366;
+        .app-card {
+            background-color: white;
+            width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        .app-card:hover {
+            transform: translateY(-5px);
+        }
+        .app-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 10px;
+        }
+        .app-title {
+            font-size: 1.2rem;
+            color: #333;
+            margin: 10px 0;
+        }
+        .app-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin: 10px 0;
+        }
+        .app-link {
+            display: inline-block;
+            padding: 10px 15px;
+            margin-top: 10px;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        .app-link:hover {
+            background: linear-gradient(to right, #2575fc, #6a11cb);
         }
         footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #003366;
+            background-color: #333;
             color: white;
-            position: fixed;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
-        #ad-banner {
-            margin: 20px auto;
-            text-align: center;
-        }
     </style>
-    <script type="text/javascript" async src="https://cdn.resources.wortise.com/sdk/web/web-sdk.js" 
-        data-wortise-key="210c08ad-ee52-4bd4-8236-7544ecaee396">
-    </script>
 </head>
 <body>
     <header>
-        <h1>Diario de Argentina</h1>
-        <p>Las últimas noticias del país al instante</p>
+        <h1>Las Mejores Apps para Ganar Dinero</h1>
+        <p>Descubre aplicaciones confiables que te permiten ganar dinero desde tu teléfono.</p>
     </header>
-    <nav>
-        <a href="#">Inicio</a>
-        <a href="#">Política</a>
-        <a href="#">Economía</a>
-        <a href="#">Deportes</a>
-        <a href="#">Espectáculos</a>
-    </nav>
     <main>
-        <article>
-            <h2>La inflación anual alcanza un récord histórico</h2>
-            <p>La inflación en Argentina ha alcanzado un récord histórico este mes, lo que ha generado preocupación en la población y en el gobierno.</p>
-        </article>
-        <article>
-            <h2>Argentina vence a Brasil en un emocionante partido</h2>
-            <p>La selección argentina se impuso 2-1 frente a Brasil en un emocionante partido de eliminatorias.</p>
-        </article>
-        <!-- Aquí está el banner publicitario -->
-        <div id="ad-banner">
-            <div id='wortise:banner1' style='min-width: 300px; min-height: 250px;'></div>
+        <div class="app-container">
+            <!-- App 1 -->
+            <div class="app-card">
+                <img src="https://via.placeholder.com/80" alt="Google Opinion Rewards" class="app-icon">
+                <h2 class="app-title">Google Opinion Rewards</h2>
+                <p class="app-description">Responde encuestas rápidas y gana dinero que puedes gastar en Google Play.</p>
+                <a href="#" class="app-link">Más información</a>
+            </div>
+            <!-- App 2 -->
+            <div class="app-card">
+                <img src="https://via.placeholder.com/80" alt="Cashzine" class="app-icon">
+                <h2 class="app-title">Cashzine</h2>
+                <p class="app-description">Lee noticias y gana recompensas canjeables por dinero real.</p>
+                <a href="#" class="app-link">Más información</a>
+            </div>
+            <!-- App 3 -->
+            <div class="app-card">
+                <img src="https://via.placeholder.com/80" alt="Sweatcoin" class="app-icon">
+                <h2 class="app-title">Sweatcoin</h2>
+                <p class="app-description">Camina, acumula puntos y cámbialos por productos o dinero.</p>
+                <a href="#" class="app-link">Más información</a>
+            </div>
+            <!-- App 4 -->
+            <div class="app-card">
+                <img src="https://via.placeholder.com/80" alt="Foap" class="app-icon">
+                <h2 class="app-title">Foap</h2>
+                <p class="app-description">Vende tus fotos y gana dinero cada vez que alguien las compre.</p>
+                <a href="#" class="app-link">Más información</a>
+            </div>
+            <!-- App 5 -->
+            <div class="app-card">
+                <img src="https://via.placeholder.com/80" alt="Toluna" class="app-icon">
+                <h2 class="app-title">Toluna</h2>
+                <p class="app-description">Participa en encuestas y prueba productos para ganar recompensas.</p>
+                <a href="#" class="app-link">Más información</a>
+            </div>
+            <!-- App 6 -->
+            <div class="app-card">
+                <img src="https://via.placeholder.com/80" alt="Slidejoy" class="app-icon">
+                <h2 class="app-title">Slidejoy</h2>
+                <p class="app-description">Gana dinero viendo anuncios en la pantalla de bloqueo de tu móvil.</p>
+                <a href="#" class="app-link">Más información</a>
+            </div>
         </div>
     </main>
     <footer>
-        <p>&copy; 2025 Diario de Argentina - Todos los derechos reservados</p>
+        <p>&copy; 2025 Recomendaciones de Apps - Todos los derechos reservados</p>
     </footer>
 </body>
 </html>
