@@ -3,57 +3,85 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anuncios Aleatorios - Adsterra</title>
+    <title>Apertura Aleatoria de URL</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            color: #ffffff;
+            font-family: 'Arial', sans-serif;
             text-align: center;
-            margin: 20px;
         }
-        iframe {
-            width: 420px;
-            height: 700px;
-            border: none;
+
+        h1 {
+            font-size: 3em;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
-        button {
-            margin-top: 20px;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 5px;
+
+        p {
+            font-size: 1.5em;
+            margin: 20px 0;
+        }
+
+        #contador {
+            font-size: 5em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .footer {
+            position: absolute;
+            bottom: 20px;
+            font-size: 0.8em;
+            color: rgba(255, 255, 255, 0.8);
         }
     </style>
-</head>
-<body>
-    <h1>Publicidad Aleatoria</h1>
-    <p>Aquí verás anuncios aleatorios de Adsterra.</p>
-
-    <!-- Contenedor del iframe -->
-    <iframe id="adIframe" src=""></iframe>
-
-    <!-- Botón para cargar otro anuncio -->
-    <button onclick="loadRandomAd()">Cargar otro anuncio</button>
-
     <script>
-        // Lista de Direclinks de Adsterra
-        const adsterraLinks = [
-            "https://www.profitablecpmrate.com/s74kxy79y5?key=965d07eebffd3b64816a807f541afddd",
-            "https://www.profitablecpmrate.com/t2quzfej4z?key=9dc00903592bb0a77c77149cb129f16d",
-            "https://www.profitablecpmrate.com/vz52t5hs5v?key=c0e5f96ffdf54f273814007be4bfdec2",
-            "https://www.profitablecpmrate.com/cdxg6xpc3?key=6005e888ba4bffee831161f27725d972"
+        // Array de URLs de AdsTerra
+        const urls = [
+            "https://www.profitablecpmrate.com/s74kxy79y5?key=965d07eebffd3b64816a807f541afddd", // Reemplaza con tu URL 1
+            "https://www.profitablecpmrate.com/t2quzfej4z?key=9dc00903592bb0a77c77149cb129f16d", // Reemplaza con tu URL 2
+            "https://www.profitablecpmrate.com/vz52t5hs5v?key=c0e5f96ffdf54f273814007be4bfdec2", // Reemplaza con tu URL 3
+            "https://www.profitablecpmrate.com/cdxg6xpc3?key=6005e888ba4bffee831161f27725d972"  // Reemplaza con tu URL 4
         ];
 
-        // Función para cargar un anuncio aleatorio en el iframe
-        function loadRandomAd() {
-            const randomAd = adsterraLinks[Math.floor(Math.random() * adsterraLinks.length)];
-            document.getElementById("adIframe").src = randomAd;
+        let contador = 20; // Tiempo en segundos
+
+        function abrirUrlAleatoria() {
+            const urlAleatoria = urls[Math.floor(Math.random() * urls.length)];
+            window.open(urlAleatoria, "_blank"); // Abre la URL en una nueva pestaña
+            contador = 20; // Reinicia el contador
         }
 
-        // Cargar un anuncio al inicio
-        loadRandomAd();
+        function iniciarContador() {
+            const contadorElement = document.getElementById("contador");
+            const intervalo = setInterval(() => {
+                contador--;
+                contadorElement.textContent = contador; // Actualiza el contador en la pantalla
+
+                if (contador <= 0) {
+                    abrirUrlAleatoria(); // Abre la URL al llegar a 0
+                    contadorElement.textContent = contador; // Muestra 0 en el contador
+                    clearInterval(intervalo); // Detiene el intervalo
+                    setTimeout(iniciarContador, 1000); // Reinicia el contador después de 1 segundo
+                }
+            }, 1000);
+        }
+
+        window.onload = iniciarContador; // Inicia el contador al cargar la página
     </script>
+</head>
+<body>
+    <h1>Apertura Aleatoria de URL</h1>
+    <p>Contador: <span id="contador">20</span> segundos</p>
+    <div class="footer">Desarrollado por [Tu Nombre]</div>
 </body>
 </html>
