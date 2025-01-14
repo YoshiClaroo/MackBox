@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anuncios Direct Link</title>
+    <title>Anuncios Monetag</title>
     <style>
         body {
             margin: 0;
@@ -15,13 +15,30 @@
             background-color: #f4f4f4;
         }
         iframe {
-            width: 90%; /* Ajusta a 90% del ancho de la ventana */
-            height: 90%; /* Ajusta a 90% de la altura de la ventana */
-            border: none; /* Sin bordes */
+            width: 520px;
+            height: 720px;
+            border: none;
         }
     </style>
 </head>
 <body>
-    <iframe src="https://sowpoint.com/nw2x0jk64?key=399b088964c2bd7a1b4398ae7fd96653"></iframe>
+    <iframe id="adFrame"></iframe>
+
+    <script>
+        // Lista de URLs de Direct Links de Monetag
+        const urls = [
+            "https://poawooptugroo.com/4/6925881",
+            "https://poawooptugroo.com/4/6925934",
+            "https://poawooptugroo.com/4/6931348",
+            "https://poawooptugroo.com/4/8694629"
+        ];
+
+        // Selección aleatoria de una URL
+        const randomIndex = Math.floor(Math.random() * urls.length);
+        const randomUrl = urls[randomIndex];
+
+        // Establecer la URL en el iframe
+        document.getElementById("adFrame").src = randomUrl;
+    </script>
 </body>
 </html>
