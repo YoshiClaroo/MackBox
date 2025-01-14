@@ -3,42 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anuncios Monetag</title>
+    <title>Anuncios Aleatorios - Adsterra</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 20px;
         }
         iframe {
-            width: 520px;
-            height: 720px;
+            width: 100%;
+            height: 500px;
             border: none;
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
         }
     </style>
 </head>
 <body>
-    <iframe id="adFrame"></iframe>
+    <h1>Publicidad Aleatoria</h1>
+    <p>Aquí verás anuncios aleatorios de Adsterra.</p>
+
+    <!-- Contenedor del iframe -->
+    <iframe id="adIframe" src=""></iframe>
+
+    <!-- Botón para cargar otro anuncio -->
+    <button onclick="loadRandomAd()">Cargar otro anuncio</button>
 
     <script>
-        // Lista de URLs de Direct Links de Monetag
-        const urls = [
-            "https://poawooptugroo.com/4/6925881",
-            "https://poawooptugroo.com/4/6925934",
-            "https://poawooptugroo.com/4/6931348",
-            "https://poawooptugroo.com/4/8694629"
+        // Lista de Direclinks de Adsterra
+        const adsterraLinks = [
+            "https://www.profitablecpmrate.com/s74kxy79y5?key=965d07eebffd3b64816a807f541afddd",
+            "https://www.profitablecpmrate.com/t2quzfej4z?key=9dc00903592bb0a77c77149cb129f16d",
+            "https://www.profitablecpmrate.com/vz52t5hs5v?key=c0e5f96ffdf54f273814007be4bfdec2",
+            "https://www.profitablecpmrate.com/cdxg6xpc3?key=6005e888ba4bffee831161f27725d972"
         ];
 
-        // Selección aleatoria de una URL
-        const randomIndex = Math.floor(Math.random() * urls.length);
-        const randomUrl = urls[randomIndex];
+        // Función para cargar un anuncio aleatorio en el iframe
+        function loadRandomAd() {
+            const randomAd = adsterraLinks[Math.floor(Math.random() * adsterraLinks.length)];
+            document.getElementById("adIframe").src = randomAd;
+        }
 
-        // Establecer la URL en el iframe
-        document.getElementById("adFrame").src = randomUrl;
+        // Cargar un anuncio al inicio
+        loadRandomAd();
     </script>
 </body>
 </html>
